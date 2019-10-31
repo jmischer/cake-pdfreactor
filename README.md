@@ -9,7 +9,7 @@ the Webservice client. You will need to import it, e.g. in your applications
 `bootstrap.php`.
 
 ``` php
-require_once '/opt/PDFreactor/wrappers/php/lib/PDFreactor.class.php';
+require_once '/path/to/PDFreactor/wrappers/php/lib/PDFreactor.class.php';
 
 ```
 
@@ -24,7 +24,7 @@ composer require jmischer/cake-pdfreactor
 
 ## Configuration
 
-`config/cakepdf.php':
+`config/cakepdf.php`:
 
 ``` php
 return [
