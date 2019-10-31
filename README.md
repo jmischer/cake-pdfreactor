@@ -17,7 +17,6 @@ require_once '/path/to/PDFreactor/wrappers/php/lib/PDFreactor.class.php';
 ## Installation
 
 1. Install using [Composer](https://getcomposer.org):
-(!!Not yet working)
 
 ``` bash
 composer require jmischer/cake-pdfreactor
