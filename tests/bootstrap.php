@@ -22,3 +22,9 @@ unset($findRoot);
 chdir($root);
 require_once $root . '/vendor/autoload.php';
 require_once $root . '/vendor/cakephp/cakephp/tests/bootstrap.php';
+
+
+$pdf_reactor_client_class = __DIR__ . '/PDFreactor/PDFreactor.class.php';
+if (file_exists($pdf_reactor_client_class)) {
+	require_once $pdf_reactor_client_class;
+}

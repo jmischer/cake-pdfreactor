@@ -43,6 +43,25 @@ class PDFreactorEngineTest extends TestCase {
 	}
 	
 	/**
+	 * 
+	 */
+	public function testOutputRealClient() {
+		if (!class_exists(PDFreactorEngine::PDF_REACTOR_WEBSERVICE_CLIENT_CLASS_NAME)) {
+			static::markTestSkipped('Test skipped, PDFreactor client class not loaded.');
+			return;
+		}
+		$cakepdf = new CakePdf([
+			'engine' => [
+				'className' => 'JMischer/CakePDFreactor.PDFreactor'
+			]
+		]);
+		$cakepdf->html("<foo>bar</foo>");
+		$output = $cakepdf->engine()->output();
+		$this->assertStringStartsWith('%PDF-1.4', $output);
+		$this->assertStringEndsWith("%%EOF\n", $output);
+	}
+	
+	/**
 	 * Test output of client gets called.
 	 */
 	public function testOutput() {
