@@ -13,7 +13,6 @@ require_once '/path/to/PDFreactor/wrappers/php/lib/PDFreactor.class.php';
 
 ```
 
-
 ## Installation
 
 1. Install using [Composer](https://getcomposer.org):
@@ -21,27 +20,6 @@ require_once '/path/to/PDFreactor/wrappers/php/lib/PDFreactor.class.php';
 ``` bash
 composer require jmischer/cake-pdfreactor
 ```
-
-2. Add to composer.json
-
-``` json
-...
-"repositories": [
-    {
-        "type": "git",
-        "url": "https://github.com/jmischer/cake-pdfreactor.git",
-        "name": "Cakepdf PDFreactor engine plugin"
-    }
-],
-"require": {
-    "friendsofcake/cakepdf": "^3.5",
-    "jmischer/cake-pdfreactor": "^1.0.0"
-}
-...
-```
-No install new dependency with
-
-`composer update jmischer/cake-pdfreactor`
 
 ## Configuration
 
