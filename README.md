@@ -1,8 +1,9 @@
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+
 # CakePdf PDFreactor engine plugin for CakePHP
 
-This Plugin contains a wrapper engine for the PDFreactor Webservice
-Client to use with the CakePHP 
-[CakePdf plugin](https://github.com/FriendsOfCake/CakePdf).
+This plugin contains a wrapper engine for the PDFreactor Web Service
+Client to use with the CakePHP 3 [CakePdf plugin](https://github.com/FriendsOfCake/CakePdf).
 
 This Plugin is not affiliated with RealObjects.com and does not contain
 the Webservice client. You will need to import it, e.g. in your applications
@@ -15,7 +16,7 @@ require_once '/path/to/PDFreactor/wrappers/php/lib/PDFreactor.class.php';
 
 ## Installation
 
-1. Install using [Composer](https://getcomposer.org):
+Install using [Composer](https://getcomposer.org):
 
 ``` bash
 composer require jmischer/cake-pdfreactor
