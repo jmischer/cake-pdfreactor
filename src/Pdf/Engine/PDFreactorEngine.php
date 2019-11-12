@@ -13,11 +13,11 @@ use Cake\Core\Exception\Exception;
  */
 class PDFreactorEngine extends AbstractPdfEngine {
 	/**
-	 * The PDFreactor webservice client class name
+	 * The default PDFreactor webservice client class name
 	 * 
 	 * @var string
 	 */
-	const PDF_REACTOR_WEBSERVICE_CLIENT_CLASS_NAME = '\com\realobjects\pdfreactor\webservice\client\PDFreactor';
+	const DEFAULT_WEBSERVICE_CLIENT_CLASS_NAME = '\com\realobjects\pdfreactor\webservice\client\PDFreactor';
 	
 	/**
 	 * 
@@ -34,9 +34,7 @@ class PDFreactorEngine extends AbstractPdfEngine {
 	 */
 	public function output() {
 		// Get client config
-		$client = $this->getConfig('client', [
-			'className' => self::PDF_REACTOR_WEBSERVICE_CLIENT_CLASS_NAME
-		]);
+		$client = $this->getConfig('client', []);
 		
 		// Create pdf reactor instance
 		$pdf_reactor = $this->createInstance($client);
@@ -66,10 +64,13 @@ class PDFreactorEngine extends AbstractPdfEngine {
 			
 			// Check client config is array
 			if (is_array($client)) {
+				$client += [
+					'className' => self::DEFAULT_WEBSERVICE_CLIENT_CLASS_NAME
+				];
 				if (isset($client['serviceUrl'])) {
 					$service_url = $client['serviceUrl'];
 				}
-				$client = isset($client['className']) ? $client['className'] : null;
+				$client = $client['className'];
 			}
 			
 			// Get class and create instance

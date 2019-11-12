@@ -24,7 +24,7 @@ require_once $root . '/vendor/autoload.php';
 require_once $root . '/vendor/cakephp/cakephp/tests/bootstrap.php';
 
 
-$pdf_reactor_client_class = __DIR__ . '/PDFreactor/PDFreactor.class.php';
+$pdf_reactor_client_class = '/opt/PDFreactor/wrappers/php/lib/PDFreactor.class.php';
 if (file_exists($pdf_reactor_client_class)) {
 	require_once $pdf_reactor_client_class;
 }
