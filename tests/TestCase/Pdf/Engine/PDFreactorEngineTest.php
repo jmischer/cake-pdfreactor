@@ -52,8 +52,7 @@ class PDFreactorEngineTest extends TestCase {
 		}
 		$cakepdf = new CakePdf([
 			'engine' => [
-				'className' => 'JMischer/CakePDFreactor.PDFreactor',
-				'client' => []
+				'className' => 'JMischer/CakePDFreactor.PDFreactor'
 			]
 		]);
 		$cakepdf->html("<foo>bar</foo>");
