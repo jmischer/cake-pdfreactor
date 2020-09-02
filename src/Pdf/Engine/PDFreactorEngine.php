@@ -4,8 +4,7 @@ namespace JMischer\CakePDFreactor\Pdf\Engine;
 use CakePdf\Pdf\CakePdf;
 use CakePdf\Pdf\Engine\AbstractPdfEngine;
 use Cake\Core\App;
-use Cake\Core\Exception\Exception;
-
+use Exception;
 /**
  *
  * @author jmischer
@@ -61,6 +60,7 @@ class PDFreactorEngine extends AbstractPdfEngine {
 		if (!is_object($client)) {
 			// Initialize service url
 			$service_url = null;
+			$api_key = null;
 			
 			// Check client config is array
 			if (is_array($client)) {
@@ -69,6 +69,9 @@ class PDFreactorEngine extends AbstractPdfEngine {
 				];
 				if (isset($client['serviceUrl'])) {
 					$service_url = $client['serviceUrl'];
+				}
+				if (isset($client['apiKey'])) {
+					$api_key = $client['apiKey'];
 				}
 				$client = $client['className'];
 			}
@@ -80,6 +83,11 @@ class PDFreactorEngine extends AbstractPdfEngine {
 						'PDFreactor: Client "{0}" not found', $client));
 			}
 			$client = new $client_class_name($service_url);
+			
+			// Set api key
+			if (isset($api_key)) {
+				$client->apiKey = $api_key;
+			}
 		}
 		
 		// Check client methode "convertAsBinary" exists
@@ -121,7 +129,7 @@ class PDFreactorEngine extends AbstractPdfEngine {
 		try {
 			// Convert as binary and return result
 			return $pdfReactor->convertAsBinary($config);
-		} catch (\Exception $ex) {
+		} catch (Exception $ex) {
 			throw new Exception(
 					__d('cake_pdf', 'PDFreactor: {0}', $ex->getMessage()),
 					$ex->getCode(), $ex);

@@ -34,6 +34,7 @@ return [
             'client' => [
                 'className' => '\com\realobjects\pdfreactor\webservice\client\PDFreactor',
                 'serviceUrl' => 'http://localhost:9423/service/rest',
+                'apiKey' => 'your_secret_api_key_if_needed'
             ],
             'options' => [
                 // PDFreactor configuration ...

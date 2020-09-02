@@ -102,6 +102,7 @@ class PDFreactorEngineTest extends TestCase {
 		$client_config = [
 			'className' => '\PDFreactor',
 			'serviceUrl' => 'http://localhost:9423/service/rest',
+			'apiKey' => '1234567890'
 		];
 		
 		$cakePdf = new CakePdf([
@@ -140,7 +141,7 @@ class PDFreactorEngineTest extends TestCase {
 			]
 		]);
 		
-		$this->expectException(\Cake\Core\Exception\Exception::class);
+		$this->expectException(\Exception::class);
 		$Pdf->engine()->output();
 	}
 	
@@ -157,21 +158,21 @@ class PDFreactorEngineTest extends TestCase {
 				]
 			]
 		]);
-		$this->expectException(\Cake\Core\Exception\Exception::class);
+		$this->expectException(\Exception::class);
 		$Pdf->engine()->output();
 	}
 	
 	/**
 	 * Test Exception "missing convertAsBinary"
 	 */
-	public function testExceptionMissinMethod() {
+	public function testExceptionMissingMethod() {
 		$Pdf = new CakePdf([
 			'engine' => [
 				'className' => 'JMischer/CakePDFreactor.PDFreactor',
 				'client' => new \stdClass()
 			]
 		]);
-		$this->expectException(\Cake\Core\Exception\Exception::class);
+		$this->expectException(\Exception::class);
 		$Pdf->engine()->output();
 	}
 }
