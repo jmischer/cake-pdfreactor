@@ -3,7 +3,9 @@
 # CakePdf PDFreactor engine plugin for CakePHP
 
 This plugin contains a wrapper engine for the PDFreactor Web Service
-Client to use with the CakePHP 3 [CakePdf plugin](https://github.com/FriendsOfCake/CakePdf).
+Client to use with the CakePHP 4.x [CakePdf plugin](https://github.com/FriendsOfCake/CakePdf).
+
+For CakePHP 3.x use the 1.x branch.
 
 This Plugin is not affiliated with RealObjects.com and does not contain
 the Webservice client. You will need to import it, e.g. in your applications
