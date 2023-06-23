@@ -20,3 +20,4 @@ tags
 /vendor
 /phpunit.xml
 /tmp
+.phpunit.result.cache

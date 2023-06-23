@@ -23,7 +23,7 @@ class PDFreactorEngineTest extends TestCase {
 	 * {@inheritDoc}
 	 * @see \Cake\TestSuite\TestCase::setUp()
 	 */
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		
 		// Create pdf reactor client mock
@@ -37,7 +37,7 @@ class PDFreactorEngineTest extends TestCase {
 	 * {@inheritDoc}
 	 * @see \Cake\TestSuite\TestCase::tearDown()
 	 */
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 		unset($this->pdfReactorClient);
 	}
